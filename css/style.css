@@ -1,0 +1,9 @@
+.container{
+	margin-top:5rem;
+	border:solid 1px;
+	border-radius: 8px;
+}
+
+.container form{
+	padding: 0.8rem;
+}

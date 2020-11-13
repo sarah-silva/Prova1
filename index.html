@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<htlm>
+	<head>
+		<meta charset = "UTF-8">
+		<title> PROVA</title>
+		
+		<link href="css/bootstrap.css" rel= "stylesheet"> 
+		<link href="css/style.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+		<script src="js/jquery.mask.js" defer> </script>
+		<script src="js/validacao.js" defer> </script>
+	</head>	
+
+	
+<body>
+
+	<div class="container" >
+	<form class="row" onsubmit="return verifica();"> 
+	
+			<div class="col-12">
+				<label> Nome </label>
+				<input type = "text" id="nome"  name= "nome" class = "form-control" />
+			</div>
+			
+			<div class="col-2">
+				<label> Tipo Pessoa: </label><br>
+                   <input id="pessoafisica" type="radio" name="tipopessoa"> Fisica
+                   <input id="pessoajuridica" type="radio" name="tipopessoa" > Jurídica
+            </div>
+		
+			<div class="col-3" >
+				<label> CPF: </label>
+				<input id="cpf" name="cpf" type="text" class="form-control" name="cpf">
+			</div>
+			<div class="col-2">
+				<label> CEP: </label>
+				<input id="cep" name="cep" type="text" class="form-control" name="cep">
+				
+			</div>
+			<div class="col-3">
+				<label> Estado: </label>
+				<select id="estado" class="form-control">
+				<option>SP</option>
+				<option>RJ</option>
+				<option>ES</option>
+				</select>
+			</div >
+			<div class="col-2">
+				<button class="btn btn-success" type="submit"  style="margin-top:30px"; >Enviar </button>
+				<button class="btn btn-primary"  style="margin-top:30px;" type="reset"> Limpar </button>
+			</div>
+			
+		<script>
+			$(document).ready(function(){
+				$("#cep").mask("00000-000");
+			});
+				$(document).ready(function(){
+				$("#cpf").mask("000.000.000-00");
+			});
+			
+		</script>
+	</form>
+	</div>		
+	
+</body>
