@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<htlm>
+<html>
 	<head>
 		<meta charset = "UTF-8">
 		<title> PROVA</title>
@@ -17,20 +17,25 @@
 	<div class="container" >
 	<form class="row" onsubmit="return verifica();"> 
 	
-			<div class="col-12">
+			<div class="col-12 cadastro">
 				<label> Nome </label>
-				<input type = "text" id="nome"  name= "nome" class = "form-control" />
+				<input type = "text" id="nome"  name= "nome" class = "form-control" required />
 			</div>
 			
 			<div class="col-2">
 				<label> Tipo Pessoa: </label><br>
-                   <input id="pessoafisica" type="radio" name="tipopessoa"> Fisica
-                   <input id="pessoajuridica" type="radio" name="tipopessoa" > Jurídica
+                   <input id="pessoafisica" type="radio" name="tipopessoa" checked="checked" onclick="mostrarRegistro();"> Fisica
+                   <input id="pessoajuridica" type="radio" name="tipopessoa" onclick="mostrarRegistro();" > Jurídica
             </div>
+			
+			<div class="col-3" id="mostraDivCnpj" style="display: none;" >
+				<label> CNPJ: </label>
+				<input id="cnpj" name="cpnj" type="text" class="form-control">
+			</div>
 		
-			<div class="col-3" >
+			<div class = "col-3" id="mostraDivCpf" style="display:;" >
 				<label> CPF: </label>
-				<input id="cpf" name="cpf" type="text" class="form-control" name="cpf">
+				<input id="cpf" name="cpf" type="text"  class="form-control" >
 			</div>
 			<div class="col-2">
 				<label> CEP: </label>
@@ -50,16 +55,10 @@
 				<button class="btn btn-primary"  style="margin-top:30px;" type="reset"> Limpar </button>
 			</div>
 			
-		<script>
-			$(document).ready(function(){
-				$("#cep").mask("00000-000");
-			});
-				$(document).ready(function(){
-				$("#cpf").mask("000.000.000-00");
-			});
-			
-		</script>
+
 	</form>
 	</div>		
 	
 </body>
+
+</html>
